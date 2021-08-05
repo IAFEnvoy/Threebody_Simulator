@@ -53,13 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BoomControl.cs" />
      <Compile Include="Assets\Scripts\Calculate.cs" />
      <Compile Include="Assets\Scripts\camera_move.cs" />
      <Compile Include="Assets\Scripts\Global.cs" />
-     <Compile Include="Assets\Scripts\HighLightControls\HighLightControlBlue.cs" />
-     <Compile Include="Assets\Scripts\HighLightControls\HighLightControlGreen.cs" />
-     <Compile Include="Assets\Scripts\HighLightControls\HighLightControlRed.cs" />
+     <Compile Include="Assets\Scripts\HighLightControls\HighLightControlYellow.cs" />
      <Compile Include="Assets\Scripts\MusicControl.cs" />
+     <Compile Include="Assets\Scripts\TextControl\BottomRightCorner.cs" />
+     <Compile Include="Assets\Scripts\TextControl\TopLeftCorner.cs" />
+     <Compile Include="Assets\Scripts\TextControl\TopRightCorner.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>E:/unity/threebody simulator/Threebody Simulator/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
