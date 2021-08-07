@@ -56,9 +56,12 @@
      <Compile Include="Assets\Scripts\BoomControl.cs" />
      <Compile Include="Assets\Scripts\Calculate.cs" />
      <Compile Include="Assets\Scripts\camera_move.cs" />
+     <Compile Include="Assets\Scripts\FontControl.cs" />
      <Compile Include="Assets\Scripts\Global.cs" />
+     <Compile Include="Assets\Scripts\GravityControl.cs" />
      <Compile Include="Assets\Scripts\HighLightControls\HighLightControlYellow.cs" />
      <Compile Include="Assets\Scripts\MusicControl.cs" />
+     <Compile Include="Assets\Scripts\SeeCamera.cs" />
      <Compile Include="Assets\Scripts\TextControl\BottomRightCorner.cs" />
      <Compile Include="Assets\Scripts\TextControl\TopLeftCorner.cs" />
      <Compile Include="Assets\Scripts\TextControl\TopRightCorner.cs" />

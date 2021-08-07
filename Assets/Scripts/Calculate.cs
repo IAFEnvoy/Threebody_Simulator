@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class Calculate : MonoBehaviour
 {
     public Material red, blue, green, white, sun, planett;
+    public Font font;
     GameObject starA, starB, starC, planet;
     double time;
     double r1, r2, r3, f1, f2, f3;
     double r4, r5, r6, f4, f5, f6;
+    public static bool run=true;
     public struct Star
     {
         public float x, y, z;
@@ -42,8 +44,8 @@ public class Calculate : MonoBehaviour
         starA.name = "starA";
         starA.transform.position = new Vector3((float)Init.x1, (float)Init.y1, (float)Init.z1);
         starA.transform.localScale = new Vector3(5, 5, 5);
-        starA.AddComponent<HighlightableObject>();
-        starA.AddComponent<HighLightControlYellow>();
+        // starA.AddComponent<HighlightableObject>();
+        // starA.AddComponent<HighLightControlYellow>();
         starA.AddComponent<TrailRenderer>();
         starA.GetComponent<TrailRenderer>().material = red;
         starA.GetComponent<Renderer>().material = sun;
@@ -59,13 +61,27 @@ public class Calculate : MonoBehaviour
         s1.x = (float)Init.x1; s1.y = (float)Init.y1; s1.z = (float)Init.z1;
         s1.vx = (float)Init.vx1; s1.vy = (float)Init.vy1; s1.vz = (float)Init.vz1;
         s1.m = (float)Init.m1;
+        GameObject ta = new GameObject();
+        ta.AddComponent<SeeCamera>();
+        ta.name = "Text";
+        ta.transform.parent = starA.transform;
+        ta.transform.localPosition = new Vector3(0, 0, 0);
+        GameObject texta = new GameObject();
+        texta.name = "_Text";
+        texta.AddComponent<TextMesh>();
+        texta.GetComponent<TextMesh>().text = "恒星A";
+        texta.GetComponent<TextMesh>().font = font;
+        texta.GetComponent<TextMesh>().fontSize = 20;
+        texta.AddComponent<FontControl>();
+        texta.transform.parent = ta.transform;
+        texta.transform.localPosition = new Vector3(5, 0, 0);
 
         starB = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         starB.name = "starB";
         starB.transform.position = new Vector3((float)Init.x2, (float)Init.y2, (float)Init.z2);
         starB.transform.localScale = new Vector3(5, 5, 5);
-        starB.AddComponent<HighlightableObject>();
-        starB.AddComponent<HighLightControlYellow>();
+        // starB.AddComponent<HighlightableObject>();
+        // starB.AddComponent<HighLightControlYellow>();
         starB.AddComponent<TrailRenderer>();
         starB.GetComponent<TrailRenderer>().material = blue;
         starB.GetComponent<Renderer>().material = sun;
@@ -81,13 +97,27 @@ public class Calculate : MonoBehaviour
         s2.x = (float)Init.x2; s2.y = (float)Init.y2; s2.z = (float)Init.z2;
         s2.vx = (float)Init.vx2; s2.vy = (float)Init.vy2; s2.vz = (float)Init.vz2;
         s2.m = (float)Init.m2;
+        GameObject tb = new GameObject();
+        tb.AddComponent<SeeCamera>();
+        tb.name = "Text";
+        tb.transform.parent = starB.transform;
+        tb.transform.localPosition = new Vector3(0, 0, 0);
+        GameObject textb = new GameObject();
+        textb.name = "_Text";
+        textb.AddComponent<TextMesh>();
+        textb.GetComponent<TextMesh>().text = "恒星B";
+        textb.GetComponent<TextMesh>().font = font;
+        textb.GetComponent<TextMesh>().fontSize = 20;
+        textb.AddComponent<FontControl>();
+        textb.transform.parent = tb.transform;
+        textb.transform.localPosition = new Vector3(5, 0, 0);
 
         starC = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         starC.name = "starC";
         starC.transform.position = new Vector3((float)Init.x3, (float)Init.y3, (float)Init.z3);
         starC.transform.localScale = new Vector3(5, 5, 5);
-        starC.AddComponent<HighlightableObject>();
-        starC.AddComponent<HighLightControlYellow>();
+        // starC.AddComponent<HighlightableObject>();
+        // starC.AddComponent<HighLightControlYellow>();
         starC.AddComponent<TrailRenderer>();
         starC.GetComponent<TrailRenderer>().material = green;
         starC.GetComponent<Renderer>().material = sun;
@@ -103,6 +133,20 @@ public class Calculate : MonoBehaviour
         s3.x = (float)Init.x3; s3.y = (float)Init.y3; s3.z = (float)Init.z3;
         s3.vx = (float)Init.vx3; s3.vy = (float)Init.vy3; s3.vz = (float)Init.vz3;
         s3.m = (float)Init.m3;
+        GameObject tc = new GameObject();
+        tc.AddComponent<SeeCamera>();
+        tc.name = "Text";
+        tc.transform.parent = starC.transform;
+        tc.transform.localPosition = new Vector3(0, 0, 0);
+        GameObject textc = new GameObject();
+        textc.name = "_Text";
+        textc.AddComponent<TextMesh>();
+        textc.GetComponent<TextMesh>().text = "恒星C";
+        textc.GetComponent<TextMesh>().font = font;
+        textc.GetComponent<TextMesh>().fontSize = 20;
+        textc.AddComponent<FontControl>();
+        textc.transform.parent = tc.transform;
+        textc.transform.localPosition = new Vector3(5, 0, 0);
 
         if (!Init.enablep) return;
 
@@ -127,6 +171,20 @@ public class Calculate : MonoBehaviour
         sp.x = (float)Init.xp; sp.y = (float)Init.yp; sp.z = (float)Init.zp;
         sp.vx = (float)Init.vxp; sp.vy = (float)Init.vyp; sp.vz = (float)Init.vzp;
         sp.m = (float)Init.mp;
+        GameObject tp = new GameObject();
+        tp.AddComponent<SeeCamera>();
+        tp.name = "Text";
+        tp.transform.parent = planet.transform;
+        tp.transform.localPosition = new Vector3(0, 0, 0);
+        GameObject textp = new GameObject();
+        textp.name = "_Text";
+        textp.AddComponent<TextMesh>();
+        textp.GetComponent<TextMesh>().text = "行星";
+        textp.GetComponent<TextMesh>().font = font;
+        textp.GetComponent<TextMesh>().fontSize = 20;
+        textp.AddComponent<FontControl>();
+        textp.transform.parent = tp.transform;
+        textp.transform.localPosition = new Vector3(5, 0, 0);
 
     }
     string bettershow(string in1)
@@ -143,6 +201,16 @@ public class Calculate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!run)
+        {
+            try { starA.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0); } catch { }
+            try { starB.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0); } catch { }
+            try { starC.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0); } catch { }
+            if (Init.enablep)
+                try { planet.GetComponent<ConstantForce>().force = new Vector3(0, 0, 0); } catch { }
+            return;
+        }
+
         time += 0.1;
         GameObject.Find("Canvas/UI/Time").GetComponent<Text>().text = bettershow(Math.Round(time, 1).ToString()) + "年";
 
